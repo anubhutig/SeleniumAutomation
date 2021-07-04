@@ -1,0 +1,17 @@
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.exe
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.deps.json
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.runtimeconfig.json
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.runtimeconfig.dev.json
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.dll
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Automation_testscript1.pdb
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+D:\Automation Testing Projects\Automation_testscript1\bin\Debug\netcoreapp3.1\WebDriver.dll
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.csproj.AssemblyReference.cache
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.AssemblyInfoInputs.cache
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.AssemblyInfo.cs
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.csproj.CoreCompileInputs.cache
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.csproj.CopyComplete
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.dll
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.pdb
+D:\Automation Testing Projects\Automation_testscript1\obj\Debug\netcoreapp3.1\Automation_testscript1.genruntimeconfig.cache

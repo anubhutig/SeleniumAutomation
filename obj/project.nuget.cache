@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "95h6VAc/B3Oa0J/LKwBYPZnVWYeVQgmFO3m6T0vV8efQzoSWLPbw+LS686t2dCm0K3tOggfhOEG4q6KM5eNCIQ==",
+  "dgSpecHash": "s1QvCgPiEBP9igE8VgCslBuIKFA/99SobwvCKGEwEfy7Rp5j9L40UfcMCwdEho8jo6JjUtVxmr6E8sZysh49pA==",
   "success": true,
   "projectFilePath": "D:\\Automation Testing Projects\\Automation_testscript1\\Automation_testscript1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\averm\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",

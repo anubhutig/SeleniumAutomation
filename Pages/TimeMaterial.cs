@@ -1,66 +1,17 @@
-﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+﻿using Automation_testscript1.Utilities;
+using OpenQA.Selenium;
 using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
 
-namespace Automation_testscript1
+namespace Automation_testscript1.Pages
 {
-    class Program
+    class TimeMaterial
     {
-        static void Main(string[] args)
+        // Test - Create new Record
+        public void CreateTimeMaterial(IWebDriver driver)
         {
-            Console.WriteLine("Hello World!");
-
-            //Test Case 1 Login to TurnUp Portal
-            
-            // Open Chrome Browser
-
-            IWebDriver driver = new ChromeDriver(@"C:\Users\averm\Desktop\Automation\Automation_test1");
-            driver.Manage().Window.Maximize();
-
-            // Launch Turn Up Portal
-
-            driver.Navigate().GoToUrl("http://horse.industryconnect.io/");
-
-            // Identify Username Textbox and Enter Valid Username
-
-            IWebElement username = driver.FindElement(By.Id("UserName"));
-            username.SendKeys("hari");
-
-            // Identify Password Textbox and Enter Valid Password
-
-            IWebElement password = driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
-
-            // Identify Login Action Button And Click
-
-            IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            loginButton.Click();
-
-
-            // Check If User Is Logged In Successfully
-
-            IWebElement helloHari = driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a"));
-                if(helloHari.Text== "Hello hari!")
-            {
-                Console.WriteLine("Logged in successfully, test passed");
-            }
-        else
-            { Console.WriteLine("Log in failed, Test failed");
-            }
-            
-                //Test Case 2 Create new record
-
-                // Look for Administration Tab and click
-
-            IWebElement adminsitration = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a"));
-            adminsitration.Click();
-
-            // Identify Time and Material Option and click
-
-            IWebElement timeandmaterial  = driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));
-            timeandmaterial.Click();
-
             // Identify Create New Button and click
 
             IWebElement createnew = driver.FindElement(By.XPath("//*[@id='container']/p/a"));
@@ -68,9 +19,9 @@ namespace Automation_testscript1
 
             // Identify TypeCode Dropdown and Click
 
-            IWebElement typecode = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[1]"));                                 
+            IWebElement typecode = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[1]"));
             typecode.Click();
-            Thread.Sleep(2000);
+            Wait.WaitForWebElement(driver, "//*[@id='TypeCode_option_selected']","XPath",5);
 
             // Identify Material from list and Click
 
@@ -86,13 +37,13 @@ namespace Automation_testscript1
 
             IWebElement description = driver.FindElement(By.Id("Description"));
             description.SendKeys("Test Automation");
-            
+
 
             // Identify Price Per Unit Textbox and Enter Valid Price
 
             IWebElement price = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
-                price.Click();
-            Thread.Sleep(500);
+            price.Click();
+            Wait.WaitForWebElement(driver, "Price", "Id", 5);
             IWebElement priceadd = driver.FindElement(By.Id("Price"));
             priceadd.SendKeys("20");
 
@@ -102,28 +53,32 @@ namespace Automation_testscript1
 
             IWebElement save = driver.FindElement(By.Id("SaveButton"));
             save.Click();
-            Thread.Sleep(1500);
+            Wait.WaitForWebElement(driver, "//*[@id='tmsGrid']/div[4]/a[4]/span", "XPath", 5);
 
             // Navigate to last page
 
             IWebElement lastpage = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span"));
             lastpage.Click();
-            Thread.Sleep(3000);
+            Wait.WaitForWebElement(driver, "//td[text()='222']", "XPath", 5);
 
             // Validate new record creation
 
             IWebElement recentcode = driver.FindElement(By.XPath("//td[text()='222']"));
-            if (recentcode.Text == "222") 
-            { 
+            if (recentcode.Text == "222")
+            {
                 Console.WriteLine("Record created successfully");
             }
             else
             {
                 Console.WriteLine("Record creation failed");
             }
+        }
 
+        // Test - Edit Created Record
+        public void EditTimeMaterial(IWebDriver driver)
+        {
             // Test Case 3 Validate edit button
-                                     
+
             //Identify edit button and click
 
             IWebElement editbutton1 = driver.FindElement(By.XPath("//td[text()='222']//following::a[1]"));
@@ -133,7 +88,7 @@ namespace Automation_testscript1
             // Identify TypeCode Dropdown and Click
 
             driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[1]")).Click();
-            Thread.Sleep(2000); 
+            
 
             // Identify Time from list and Click
 
@@ -157,25 +112,24 @@ namespace Automation_testscript1
 
             IWebElement price1 = driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[4]/div/span[1]/span/input[1]"));
             price1.Click();
-            Thread.Sleep(500);
+            Wait.WaitForWebElement(driver, "Price", "Id", 5);
             IWebElement priceadd1 = driver.FindElement(By.Id("Price"));
             priceadd1.Clear();
             price1.Click();
             priceadd1.SendKeys("200");
 
-            Thread.Sleep(500);
+            
 
             // Identify Select Files and click
 
             // Identify Save Button and Click
 
             driver.FindElement(By.Id("SaveButton")).Click();
-            Thread.Sleep(1500);
-
+            
             // Navigate to last page
 
-             driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
-             Thread.Sleep(3000);
+            driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
+            Wait.WaitForWebElement(driver, "//td[text()='567']", "XPath", 5);
 
             // Validate new record creation
 
@@ -188,7 +142,11 @@ namespace Automation_testscript1
             {
                 Console.WriteLine("Record editing failed");
             }
-                 
+        }
+
+        // Test - Delete Created Record
+        public void DeleteTimeMaterial(IWebDriver driver)
+        {
             // Test Case 4 Delete created record
 
             // Identify Delete Button and Delete Record
@@ -196,16 +154,16 @@ namespace Automation_testscript1
             IWebElement delete = driver.FindElement(By.XPath("//td[text()='567']//following::a[2]"));
             delete.Click();
             driver.SwitchTo().Alert().Accept();
-            
+
 
             // Navigate to last page
 
-             driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
-             Thread.Sleep(3000);
+            driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
+            Wait.WaitForWebElement(driver, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]", "XPath", 5);
 
             // Validate Record Deletion 
 
-            IWebElement recentcode2 = driver.FindElement(By.XPath("//td[text()='567']"));
+            IWebElement recentcode2 = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]"));
             if (recentcode2.Text == "567")
             {
                 Console.WriteLine("Record not deleted");
@@ -214,8 +172,6 @@ namespace Automation_testscript1
             {
                 Console.WriteLine("Record deleted");
             }
-            
         }
-
     }
 }

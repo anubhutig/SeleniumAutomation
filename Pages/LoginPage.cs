@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
@@ -21,20 +22,33 @@ namespace Automation_testscript1.Pages
 
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/");
 
-            // Identify Username Textbox and Enter Valid Username
+            try
+            {
+                // Identify Username Textbox and Enter Valid Username
 
-            IWebElement username = driver.FindElement(By.Id("UserName"));
-            username.SendKeys("hari");
+                IWebElement username = driver.FindElement(By.Id("UserName"));
+                username.SendKeys("hari");
 
-            // Identify Password Textbox and Enter Valid Password
+                // Identify Password Textbox and Enter Valid Password
 
-            IWebElement password = driver.FindElement(By.Id("Password"));
-            password.SendKeys("123123");
+                IWebElement password = driver.FindElement(By.Id("Password"));
+                password.SendKeys("123123");
 
-            // Identify Login Action Button And Click
+                // Identify Login Action Button And Click
 
-            IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
-            loginButton.Click();
+                IWebElement loginButton = driver.FindElement(By.XPath("//*[@id='loginForm']/form/div[3]/input[1]"));
+                loginButton.Click();
+
+            }
+
+            catch(Exception ex)
+            {
+                Assert.Fail(ex.Message);
+
+
+            }
+
+           
         }
     }
 }
